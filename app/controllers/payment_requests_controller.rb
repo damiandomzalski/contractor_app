@@ -20,6 +20,8 @@ class PaymentRequestsController < ApplicationController
 
     respond_to do |format|
       if @payment_request.save
+        Publisher.publish('payment_requests', @payment_request.attributes)
+
         format.html { redirect_to @payment_request, notice: 'Payment request was successfully created.' }
         format.json { render :show, status: :created, location: @payment_request }
       else

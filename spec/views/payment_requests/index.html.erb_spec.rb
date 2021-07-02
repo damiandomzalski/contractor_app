@@ -8,14 +8,12 @@ RSpec.describe 'payment_requests/index', type: :view do
              PaymentRequest.create!(
                amount: 2.5,
                currency: 'Currency',
-               description: 'MyText',
-               status: 3
+               description: 'MyText'
              ),
              PaymentRequest.create!(
                amount: 2.5,
                currency: 'Currency',
-               description: 'MyText',
-               status: 3
+               description: 'MyText'
              )
            ])
   end
@@ -25,6 +23,6 @@ RSpec.describe 'payment_requests/index', type: :view do
     assert_select 'tr>td', text: 2.5.to_s, count: 2
     assert_select 'tr>td', text: 'Currency'.to_s, count: 2
     assert_select 'tr>td', text: 'MyText'.to_s, count: 2
-    assert_select 'tr>td', text: 3.to_s, count: 2
+    assert_select 'tr>td', text: 'pending', count: 2
   end
 end

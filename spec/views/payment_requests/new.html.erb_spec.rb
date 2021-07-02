@@ -21,8 +21,6 @@ RSpec.describe 'payment_requests/new', type: :view do
       assert_select 'input[name=?]', 'payment_request[currency]'
 
       assert_select 'textarea[name=?]', 'payment_request[description]'
-
-      assert_select 'input[name=?]', 'payment_request[status]'
     end
   end
 end

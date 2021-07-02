@@ -7,8 +7,7 @@ RSpec.describe 'payment_requests/show', type: :view do
     @payment_request = assign(:payment_request, PaymentRequest.create!(
                                                   amount: 2.5,
                                                   currency: 'Currency',
-                                                  description: 'MyText',
-                                                  status: 3
+                                                  description: 'MyText'
                                                 ))
   end
 
@@ -17,6 +16,6 @@ RSpec.describe 'payment_requests/show', type: :view do
     expect(rendered).to match(/2.5/)
     expect(rendered).to match(/Currency/)
     expect(rendered).to match(/MyText/)
-    expect(rendered).to match(/3/)
+    expect(rendered).to match(/pending/)
   end
 end
