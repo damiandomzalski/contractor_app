@@ -21,8 +21,6 @@
         <td><%= payment_request.description %></td>
         <td><%= payment_request.status %></td>
         <td><%= link_to 'Show', payment_request %></td>
-        <td><%= link_to 'Edit', edit_payment_request_path(payment_request) %></td>
-        <td><%= link_to 'Destroy', payment_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
